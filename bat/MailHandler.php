@@ -78,8 +78,14 @@ try{
 		$m->smtp_on( $host, $username, $password, $port);
 	}
 
-	    if($m->Send()) echo ('<br/>'. $m->status_mail['message']. '<br/><br/>');
-	    else print_r(error_get_last());
+	    if($m->Send()) {
+		    echo ('<br/>'. $m->status_mail['message']. '<br/><br/>');
+	    }
+	    else {
+		    print_r(error_get_last());
+		     echo ('<br/>'. $m->status_mail['message']. '<br/><br/>');
+		    
+	    }
 	    print_r(error_get_last());
         echo ('<br/>'. $m->status_mail['message']. '<br/><br/>');
 
