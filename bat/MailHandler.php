@@ -1,10 +1,14 @@
 <?php
     $owner_email='cls.apps.mail@gmail.com';
     //SMTP server settings	
-    $host = 'smtp.gmail.com';
+    //$host = 'smtp.gmail.com';
+    //$port = '465';//"587";
+    $host = '';
     $port = '465';//"587";
-    $username = 'cls.apps.mail@gmail.com';
-    $password = '~Qcls.appZ0@*.';
+    //$username = 'cls.apps.mail@gmail.com';
+    //$password = '~Qcls.appZ0@*.';
+    $username = '';
+    $password = '';
 
     $subject='A message from your site visitor ';
     $user_email='';    
