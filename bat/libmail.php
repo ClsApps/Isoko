@@ -135,8 +135,7 @@ class Mail
         if (!is_array($this->sendto[$resource]) OR !count($this->sendto[$resource]))
         {
             $this->status_mail['status'] = false;
-            $this->status_mail['message'] = error_get_last()['message'];
-            //$this->status_mail['message'] = "Error : no recipient selected for ".$resource;
+            $this->status_mail['message'] = "Error : no recipient selected for ".$resource;
             // return false;
         }
         if (!isset($this->body[$resource_body]))
@@ -209,9 +208,7 @@ class Mail
                     $new_mass_head[$key] = $value;
             }
             reset($new_mass_head);
-           
-           //while (list( $hdr, $value ) = each($new_mass_head))
-            foreach ($new_mass_head as $hdr => $value)           
+            while (list( $hdr, $value ) = each($new_mass_head))
             {
                 if ($hdr == "From" and strlen($this->names_email['from']))
                     $this->ready_headers[$resource] .= $hdr.": =?".$this->charset."?Q?".str_replace("+", "_", str_replace("%", "=", urlencode(strtr($this->names_email['from'], "\r\n", "  "))))."?= <".$value.">\r\n";
@@ -233,9 +230,7 @@ class Mail
                     $new_mass_head[$key] = $value;
             }
             reset($new_mass_head);
-             
-            //while (list( $hdr, $value ) = each($new_mass_head))
-            foreach ($new_mass_head as $hdr => $value)
+            while (list( $hdr, $value ) = each($new_mass_head))
             {
                 if ($hdr == "From" and strlen($this->names_email['from']))
                     $this->ready_headers[$resource] .= $hdr.": =?".$this->charset."?Q?".str_replace("+", "_", str_replace("%", "=", urlencode(strtr($this->names_email['from'], "\r\n", "  "))))."?= <".$value.">\r\n";
@@ -272,8 +267,7 @@ class Mail
         if (!is_string($from))
         {
             $this->status_mail['status'] = false;
-            $this->status_mail['message'] = error_get_last()['message'];
-            //$this->status_mail['message'] = "Error, From should be inline";
+            $this->status_mail['message'] = "Error, From should be inline";
             return FALSE;
         }
         $temp_mass = explode(';', $from);
@@ -475,7 +469,6 @@ class Mail
     {
         if (!$this->status_mail['status'])
         {
-            echo ('Error Mail Failled => Send()');
             return FALSE;
         }
         if (!$this->smtp['on'])
@@ -485,7 +478,7 @@ class Mail
                 $strTo = implode(", ", $this->sendto[$key]);
                 $this->BuildMail($key);
                 if (!$this->status_mail['status'])
-                {                    
+                {
                     return FALSE;
                 }
                 if (isset($this->body[$key]))
@@ -522,7 +515,7 @@ class Mail
                 return true;
             }
             else
-            {               
+            {
                 return FALSE;
             }
         }
