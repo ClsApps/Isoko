@@ -208,7 +208,8 @@ class Mail
                     $new_mass_head[$key] = $value;
             }
             reset($new_mass_head);
-            while (list( $hdr, $value ) = each($new_mass_head))
+            //while (list( $hdr, $value ) = each($new_mass_head))
+            foreach ($new_mass_head as $hdr => $value)
             {
                 if ($hdr == "From" and strlen($this->names_email['from']))
                     $this->ready_headers[$resource] .= $hdr.": =?".$this->charset."?Q?".str_replace("+", "_", str_replace("%", "=", urlencode(strtr($this->names_email['from'], "\r\n", "  "))))."?= <".$value.">\r\n";
@@ -230,7 +231,8 @@ class Mail
                     $new_mass_head[$key] = $value;
             }
             reset($new_mass_head);
-            while (list( $hdr, $value ) = each($new_mass_head))
+            //while (list( $hdr, $value ) = each($new_mass_head))
+             foreach ($new_mass_head as $hdr => $value)   
             {
                 if ($hdr == "From" and strlen($this->names_email['from']))
                     $this->ready_headers[$resource] .= $hdr.": =?".$this->charset."?Q?".str_replace("+", "_", str_replace("%", "=", urlencode(strtr($this->names_email['from'], "\r\n", "  "))))."?= <".$value.">\r\n";
