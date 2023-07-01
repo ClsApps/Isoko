@@ -1,12 +1,8 @@
 <?php
     $owner_email='cls.apps.mail@gmail.com';
     //SMTP server settings	
-    //$host = 'smtp.gmail.com';
-    //$port = '465';//"587";
     $host = '';
     $port = '465';//"587";
-    //$username = 'cls.apps.mail@gmail.com';
-    //$password = '~Qcls.appZ0@*.';
     $username = '';
     $password = '';
 
@@ -78,17 +74,6 @@ try{
 		$m->smtp_on( $host, $username, $password, $port);
 	}
 
-	    if($m->Send()) {
-		    echo ('<br/>'. $m->status_mail['message']. '<br/><br/>');
-	    }
-	    else {
-		    print_r(error_get_last());
-		     echo ('<br/>'. $m->status_mail['message']. '<br/><br/>');
-		    
-	    }
-	    print_r(error_get_last());
-        echo ('<br/>'. $m->status_mail['message']. '<br/><br/>');
-
 	if($m->Send()){
 		die('success');
 	}	
@@ -96,4 +81,4 @@ try{
 }catch(Exception $mail){
 	die($mail);
 }	
-?>	
+?>
