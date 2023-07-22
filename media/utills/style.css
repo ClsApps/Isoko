@@ -1,0 +1,59 @@
+/* CSS goes here, at the top of the page */ 
+ <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+ @import url('https://fonts.googleapis.com/css?family=PT+Sans');
+ @import url('https://fonts.googleapis.com/css?family=PT+Serif');
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background: #eee;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: Arial;
+}
+
+.container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 999;
+}
+
+video{
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-shadow: rgba(0,0,0, .2) 0 0 30px
+}
+
+.tap{
+  display: inline-block;
+  padding: 10px 30px;
+  background: #7985FF;
+  color: #fff;
+  line-height: 1;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all .25s ease-out
+}
+.tap:hover{
+   background: #111;
+   color: #fff;
+  text-decoration: none;
+  box-shadow: rgba(0,0,0, .3) 0 0 30px
+}
+.tap:active{
+  transform: scale(0.9)
+}
